@@ -1,0 +1,22 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Storex.sln
+/Web.Tests
+/.vs/config
+/DAL/obj/Debug
+/Domain/obj/Debug
+/packages
+/Web/bin
+/Web/obj/Debug
+/DAL/bin
+/DataAnnotations/bin/Debug
+/DataAnnotations/obj/Debug
+/Domain/bin
+/Resources/bin/Debug
+/Resources/obj/Debug
+/WebAPI/bin
+/WebAPI/obj/Debug
+/WebAPI.Tests/bin/Debug
+/WebAPI.Tests/obj/Debug

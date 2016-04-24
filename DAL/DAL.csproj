@@ -50,24 +50,32 @@
       <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.Owin, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.2.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.Owin.Security, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.Owin.Security.Cookies, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.Owin.Security.OAuth, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.3.1\lib\net45\NLog.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
@@ -85,17 +93,64 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DbInitializer.cs" />
+    <Compile Include="EFConfiguration\RoleMap.cs" />
+    <Compile Include="EFConfiguration\ServiceMap.cs" />
+    <Compile Include="EFConfiguration\UserClaimMap.cs" />
+    <Compile Include="EFConfiguration\UserLoginMap.cs" />
+    <Compile Include="EFConfiguration\UserMap.cs" />
+    <Compile Include="EFConfiguration\UserRoleMap.cs" />
+    <Compile Include="Helpers\EFRepositoryFactories.cs" />
+    <Compile Include="Helpers\EFRepositoryProvider.cs" />
+    <Compile Include="Helpers\FormattedDbEntityValidationException.cs" />
+    <Compile Include="Interfaces\Contacts\IContactRepository.cs" />
+    <Compile Include="Interfaces\Contacts\IPersonRepository.cs" />
     <Compile Include="Interfaces\IDbContext.cs" />
+    <Compile Include="Interfaces\Identity\IRoleRepository.cs" />
+    <Compile Include="Interfaces\Identity\IUserClaimRepository.cs" />
+    <Compile Include="Interfaces\Identity\IUserLoginRepository.cs" />
+    <Compile Include="Interfaces\Identity\IUserRoleRepository.cs" />
     <Compile Include="Interfaces\IEFRepository.cs" />
     <Compile Include="Interfaces\IEFRepositoryProvider.cs" />
-    <Compile Include="Repositories\EFRepositories.cs" />
+    <Compile Include="Interfaces\IUOW.cs" />
+    <Compile Include="Interfaces\Identity\IUserRepository.cs" />
+    <Compile Include="Interfaces\IUserNameResolver.cs" />
+    <Compile Include="Interfaces\Orders\IOrderRepository.cs" />
+    <Compile Include="Interfaces\Storage\IProductRepository.cs" />
+    <Compile Include="NLogCommandInterceptor.cs" />
+    <Compile Include="Repositories\Contacts\ContactRepository.cs" />
+    <Compile Include="Repositories\Contacts\PersonRepository.cs" />
+    <Compile Include="Repositories\EFRepository.cs" />
+    <Compile Include="Repositories\Identity\RoleRepository.cs" />
+    <Compile Include="Repositories\Identity\UserClaimRepository.cs" />
+    <Compile Include="Repositories\Identity\UserLoginRepository.cs" />
+    <Compile Include="Repositories\Identity\UserRepository.cs" />
+    <Compile Include="Repositories\Identity\UserRoleRepository.cs" />
+    <Compile Include="Repositories\Orders\OrderRepository.cs" />
+    <Compile Include="Repositories\Storage\ProductRepository.cs" />
     <Compile Include="StorexDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserNameResolver.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataAnnotations\DataAnnotations.csproj">
+      <Project>{9de49231-c0f5-4703-8154-44a28355dfd9}</Project>
+      <Name>DataAnnotations</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{441097e7-a54b-488b-86a8-17e4b2af58df}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Resources\Resources.csproj">
+      <Project>{69099cd1-f3da-4526-b71a-5502b56e9e2d}</Project>
+      <Name>Resources</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
