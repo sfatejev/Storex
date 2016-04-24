@@ -130,6 +130,7 @@
     <Compile Include="Repositories\Storage\ProductRepository.cs" />
     <Compile Include="StorexDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UOW.cs" />
     <Compile Include="UserNameResolver.cs" />
   </ItemGroup>
   <ItemGroup>
