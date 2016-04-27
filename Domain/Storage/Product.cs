@@ -6,7 +6,7 @@ using Domain.Orders;
 
 namespace Domain.Storage
 {
-    public class Product
+    public class Product : BaseEntity
     {
         public int ProductId { get; set; }
 
@@ -18,9 +18,9 @@ namespace Domain.Storage
 
         [MaxLength(255, ErrorMessageResourceName = "FieldMaxLength", ErrorMessageResourceType = typeof(Resources.Common))]
         public string ProductDescription { get; set; }
-
+        
         [Precision(8, 2)]
-        public double? ProductValue { get; set; } //Product intrinsic value (omaväärtus laos)
+        public decimal? ProductValue { get; set; } //Product intrinsic value (omaväärtus laos)
 
         public bool ProductActive { get; set; }
 

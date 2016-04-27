@@ -16,7 +16,7 @@ namespace Domain.Orders
         public DateTime? OrderPaymentDate { get; set; } //Deadline date for payment
 
         [Precision(6, 2)]
-        public double? OrderDiscountPercent { get; set; } //Discount percent for this order
+        public decimal? OrderDiscountPercent { get; set; } //Discount percent for this order
 
         [ForeignKey(nameof(Client))]
         public int ClientId { get; set; }

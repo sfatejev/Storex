@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Storage
 {
-    public class StoredProduct
+    public class StoredProduct : BaseEntity
     {
         public int StoredProductId { get; set; }
 

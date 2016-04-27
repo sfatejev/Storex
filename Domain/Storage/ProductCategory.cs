@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Domain.Storage
 {
-    public class ProductCategory
+    public class ProductCategory : BaseEntity
     {
         public int ProductCategoryId { get; set; }
 

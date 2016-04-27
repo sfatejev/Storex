@@ -14,8 +14,7 @@ namespace Domain.Identity
 {
     public class User : User<int, Role, User, UserClaim, UserLogin, UserRole>
     { 
-        public int PersonId { get; set; }
-        public virtual Person Person { get; set; } //TODO nullable
+        public virtual List<Person> Person { get; set; } //TODO nullable
 
 
         public User()
