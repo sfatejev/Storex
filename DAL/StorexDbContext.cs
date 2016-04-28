@@ -163,7 +163,5 @@ namespace DAL
             _logger.Info("Disposing: " + disposing + " _instanceId: " + _instanceId);
             base.Dispose(disposing);
         }
-
-        public System.Data.Entity.DbSet<Domain.Contacts.Person> People { get; set; }
     }
 }
