@@ -1,7 +1,14 @@
-﻿import {Component} from 'angular2/core';
+﻿import {Component, View} from 'angular2/core';
 
 @Component({
-    selector: 'my-app',
-    template: 'Angular2 StorexApp'
+    selector: 'my-app'
 })
-export class AppComponent { }
+@View({
+    template: `
+    Message: {{ message }}
+    <br/><input [(ngModel)]="message"/>
+`
+})
+export class AppComponent {
+    message: string;
+}

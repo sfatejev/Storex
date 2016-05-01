@@ -14,8 +14,10 @@ var AppComponent = (function () {
     }
     AppComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            template: 'Angular2 StorexApp'
+            selector: 'my-app'
+        }),
+        core_1.View({
+            template: "\n    Message: {{ message }}\n    <br/><input [(ngModel)]=\"message\"/>\n"
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
